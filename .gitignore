@@ -1,0 +1,12 @@
+# Ignore Python cache & virtual environments
+__pycache__/
+*.pyc
+venv/
+.env
+
+# Ignore large model weights & checkpoints
+*.safetensors
+*.bin
+*.pt
+outputs/
+checkpoints/
