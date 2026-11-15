@@ -1,12 +1,33 @@
-# Ignore Python cache & virtual environments
+# Python & Environments
 __pycache__/
-*.pyc
+*.py[cod]
+*$py.class
 venv/
+.venv/
+env/
 .env
 
-# Ignore large model weights & checkpoints
+# Jupyter & Google Colab
+.ipynb_checkpoints/
+drive/
+
+# Model Checkpoints & Heavy Weights (Save these to Google Drive instead)
 *.safetensors
 *.bin
 *.pt
-outputs/
+*.pth
+*.ckpt
+*.gguf
 checkpoints/
+outputs/
+results/
+
+# Experiment Tracking Logs
+wandb/
+runs/
+*.tfevents*
+
+# OS & Editor Files
+.DS_Store
+Thumbs.db
+.vscode/
