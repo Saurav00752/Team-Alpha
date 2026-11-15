@@ -1,0 +1,33 @@
+# Python & Environments
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+env/
+.env
+
+# Jupyter & Google Colab
+.ipynb_checkpoints/
+drive/
+
+# Model Checkpoints & Heavy Weights (Save these to Google Drive instead)
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.ckpt
+*.gguf
+checkpoints/
+outputs/
+results/
+
+# Experiment Tracking Logs
+wandb/
+runs/
+*.tfevents*
+
+# OS & Editor Files
+.DS_Store
+Thumbs.db
+.vscode/
