@@ -1,0 +1,37 @@
+{
+  "model_stage": "Baseline (Base 4-bit Model)",
+  "base_model_id": "Qwen/Qwen2.5-7B-Instruct",
+  "num_samples": 2,
+  "aggregate_metrics": {
+    "exact_match_pct": 0.0,
+    "token_f1_pct": 54.1,
+    "syntax_validity_pct": 100.0,
+    "avg_latency_sec": 2.558
+  },
+  "samples": [
+    {
+      "id": 1,
+      "user_input": "The package status says Delivered, but I checked my porch and lobby and nothing is here.",
+      "reference": "{\"department\": \"shipping_logistics\", \"priority\": \"HIGH\", \"intent\": \"missing_delivered_package\", \"requires_refund\": false}",
+      "prediction": "{\"department\":\"Shipping and Delivery\",\"priority\":\"Medium\",\"intent\":\"Status Inquiry\",\"requires_refund\":\"False\"}",
+      "latency_sec": 2.845,
+      "metrics": {
+        "exact_match": 0.0,
+        "token_f1": 0.5263,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 2,
+      "user_input": "Two-factor authentication keeps rejecting my authenticator app codes even after syncing time.",
+      "reference": "{\"department\": \"account_support\", \"priority\": \"HIGH\", \"intent\": \"2fa_lockout\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"Security\", \"priority\": \"Medium\", \"intent\": \"Resolve Authentication Issue\", \"requires_refund\": false}",
+      "latency_sec": 2.272,
+      "metrics": {
+        "exact_match": 0.0,
+        "token_f1": 0.5556,
+        "syntax_valid": 1.0
+      }
+    }
+  ]
+}
