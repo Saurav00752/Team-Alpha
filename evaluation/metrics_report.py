@@ -120,6 +120,5 @@ def main() -> None:
     generate_markdown_report(base_data, ft_data, args.report)
 
 
-if __name__ == 
-      "__main__":
+if __name__ == "__main__":
     main()
