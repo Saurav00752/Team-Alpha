@@ -40,8 +40,8 @@ An end-to-end Deep Learning pipeline that specializes **`Qwen/Qwen2.5-7B-Instruc
 | Member | Role | Core Deliverables |
 | :--- | :--- | :--- |
 | **Member 1 (Saurav — Team Lead)** | QLoRA Pipeline & Architecture | Repo governance, 4-bit `SFTTrainer` pipeline, hyperparameter config, loss curves (`training/`, `notebooks/01_*`) |
-| **Member 2** | Data Engineering & Curation | Customer support corpus curation, JSON chat-template formatting, SHA-256 leakage audit (`data/`) |
-| **Member 3** | Scientific Evaluation & Auditing | Held-out test rubric, deterministic baseline vs. QLoRA evaluation, metric charts (`evaluation/`) |
+| **Member 2 (Yogesh Kumar)** | Data Engineering & Curation | Customer support corpus curation, JSON chat-template formatting, SHA-256 leakage audit (`data/`) |
+| **Member 3 (Harshit)** | Scientific Evaluation & Auditing | Held-out test rubric, deterministic baseline vs. QLoRA evaluation, metric charts (`evaluation/`) |
 | **Member 4 (Chetan Agarwal)** | Inference Engine, Demo UI & Docs | Single-VRAM adapter toggle engine, side-by-side Gradio demo, documentation (`app/`, `notebooks/02_*`, `README.md`) |
 
 ---
@@ -124,7 +124,7 @@ Evaluated deterministically (`do_sample=False`) on held-out `data/processed/test
 
 ### 1. Clone & Install Dependencies
 ```bash
-git clone -b dev [https://github.com/Saurav00752/Team-Alpha.git](https://github.com/Saurav00752/Team-Alpha.git)
+git clone https://github.com/Saurav00752/Team-Alpha.git
 cd Team-Alpha
 pip install -r requirements.txt
 ```
