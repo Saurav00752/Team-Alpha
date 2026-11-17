@@ -1,0 +1,38 @@
+{
+  "model_stage": "Fine-Tuned (QLoRA Domain Expert)",
+  "base_model_id": "Qwen/Qwen2.5-7B-Instruct",
+  "adapter_dir": "/content/drive/MyDrive/domain-expert-qlora/final_adapter",
+  "num_samples": 2,
+  "aggregate_metrics": {
+    "exact_match_pct": 0.0,
+    "token_f1_pct": 62.5,
+    "syntax_validity_pct": 100.0,
+    "avg_latency_sec": 4.236
+  },
+  "samples": [
+    {
+      "id": 1,
+      "user_input": "The package status says Delivered, but I checked my porch and lobby and nothing is here.",
+      "reference": "{\"department\": \"shipping_logistics\", \"priority\": \"HIGH\", \"intent\": \"missing_delivered_package\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"shipping\", \"priority\": \"medium\", \"intent\": \"package_status\", \"requires_refund\": false}",
+      "latency_sec": 4.545,
+      "metrics": {
+        "exact_match": 0.0,
+        "token_f1": 0.625,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 2,
+      "user_input": "Two-factor authentication keeps rejecting my authenticator app codes even after syncing time.",
+      "reference": "{\"department\": \"account_support\", \"priority\": \"HIGH\", \"intent\": \"2fa_lockout\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"security\", \"priority\": \"medium\", \"intent\": \"account_security\", \"requires_refund\": false}",
+      "latency_sec": 3.928,
+      "metrics": {
+        "exact_match": 0.0,
+        "token_f1": 0.625,
+        "syntax_valid": 1.0
+      }
+    }
+  ]
+}
