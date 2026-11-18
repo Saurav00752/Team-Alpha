@@ -142,6 +142,5 @@ if __name__ == "__main__":
         test_file=args.test_file,
         output_file=args.output,
         max_new_tokens=args.max_new_tokens,
-        li
-      mit=args.limit,
-      )
+        limit=args.limit,
+    )
