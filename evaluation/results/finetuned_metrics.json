@@ -1,36 +1,1272 @@
 {
   "model_stage": "Fine-Tuned (QLoRA Domain Expert)",
   "base_model_id": "Qwen/Qwen2.5-7B-Instruct",
-  "adapter_dir": "/content/drive/MyDrive/domain-expert-qlora/final_adapter",
-  "num_samples": 2,
+  "adapter_dir": "/content/adapter_clean",
+  "num_samples": 105,
   "aggregate_metrics": {
-    "exact_match_pct": 0.0,
-    "token_f1_pct": 62.5,
+    "exact_match_pct": 100.0,
+    "token_f1_pct": 100.0,
     "syntax_validity_pct": 100.0,
-    "avg_latency_sec": 4.236
+    "avg_latency_sec": 3.726
   },
   "samples": [
     {
       "id": 1,
-      "user_input": "The package status says Delivered, but I checked my porch and lobby and nothing is here.",
-      "reference": "{\"department\": \"shipping_logistics\", \"priority\": \"HIGH\", \"intent\": \"missing_delivered_package\", \"requires_refund\": false}",
-      "prediction": "{\"department\": \"shipping\", \"priority\": \"medium\", \"intent\": \"package_status\", \"requires_refund\": false}",
-      "latency_sec": 4.545,
+      "user_input": "Two-factor verification keeps failing for account #22217 even after time sync.",
+      "reference": "{\"department\": \"security\", \"priority\": \"high\", \"intent\": \"2fa_lockout\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"security\", \"priority\": \"high\", \"intent\": \"2fa_lockout\", \"requires_refund\": false}",
+      "latency_sec": 5.341,
       "metrics": {
-        "exact_match": 0.0,
-        "token_f1": 0.625,
+        "exact_match": 1.0,
+        "token_f1": 1.0,
         "syntax_valid": 1.0
       }
     },
     {
       "id": 2,
-      "user_input": "Two-factor authentication keeps rejecting my authenticator app codes even after syncing time.",
-      "reference": "{\"department\": \"account_support\", \"priority\": \"HIGH\", \"intent\": \"2fa_lockout\", \"requires_refund\": false}",
-      "prediction": "{\"department\": \"security\", \"priority\": \"medium\", \"intent\": \"account_security\", \"requires_refund\": false}",
-      "latency_sec": 3.928,
+      "user_input": "Need immediate rotation of exposed secret token on workspace #28818.",
+      "reference": "{\"department\": \"security\", \"priority\": \"high\", \"intent\": \"api_key_leak\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"security\", \"priority\": \"high\", \"intent\": \"api_key_leak\", \"requires_refund\": false}",
+      "latency_sec": 3.523,
       "metrics": {
-        "exact_match": 0.0,
-        "token_f1": 0.625,
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 3,
+      "user_input": "Please cancel my Enterprise plan immediately and refund the unused $99.",
+      "reference": "{\"department\": \"billing\", \"priority\": \"medium\", \"intent\": \"subscription_cancel\", \"requires_refund\": true}",
+      "prediction": "{\"department\": \"billing\", \"priority\": \"medium\", \"intent\": \"subscription_cancel\", \"requires_refund\": true}",
+      "latency_sec": 3.348,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 4,
+      "user_input": "How do I stop my Starter membership (#88815) and get $79 back?",
+      "reference": "{\"department\": \"billing\", \"priority\": \"medium\", \"intent\": \"subscription_cancel\", \"requires_refund\": true}",
+      "prediction": "{\"department\": \"billing\", \"priority\": \"medium\", \"intent\": \"subscription_cancel\", \"requires_refund\": true}",
+      "latency_sec": 4.431,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 5,
+      "user_input": "Status update on refund #27627 for $149?",
+      "reference": "{\"department\": \"billing\", \"priority\": \"medium\", \"intent\": \"refund_status\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"billing\", \"priority\": \"medium\", \"intent\": \"refund_status\", \"requires_refund\": false}",
+      "latency_sec": 3.559,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 6,
+      "user_input": "My package #78731 was marked delivered 22 hours ago and is missing from my front porch.",
+      "reference": "{\"department\": \"shipping\", \"priority\": \"high\", \"intent\": \"missing_delivered_package\", \"requires_refund\": true}",
+      "prediction": "{\"department\": \"shipping\", \"priority\": \"high\", \"intent\": \"missing_delivered_package\", \"requires_refund\": true}",
+      "latency_sec": 3.662,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 7,
+      "user_input": "Two-factor verification keeps failing for account #96537 even after time sync.",
+      "reference": "{\"department\": \"security\", \"priority\": \"high\", \"intent\": \"2fa_lockout\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"security\", \"priority\": \"high\", \"intent\": \"2fa_lockout\", \"requires_refund\": false}",
+      "latency_sec": 3.674,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 8,
+      "user_input": "Tracking for #50850 shows left at reception desk, yet I never received the parcel.",
+      "reference": "{\"department\": \"shipping\", \"priority\": \"high\", \"intent\": \"missing_delivered_package\", \"requires_refund\": true}",
+      "prediction": "{\"department\": \"shipping\", \"priority\": \"high\", \"intent\": \"missing_delivered_package\", \"requires_refund\": true}",
+      "latency_sec": 4.526,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 9,
+      "user_input": "Please cancel my Enterprise plan immediately and refund the unused $79.",
+      "reference": "{\"department\": \"billing\", \"priority\": \"medium\", \"intent\": \"subscription_cancel\", \"requires_refund\": true}",
+      "prediction": "{\"department\": \"billing\", \"priority\": \"medium\", \"intent\": \"subscription_cancel\", \"requires_refund\": true}",
+      "latency_sec": 3.407,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 10,
+      "user_input": "Please cancel my Team plan immediately and refund the unused $19.",
+      "reference": "{\"department\": \"billing\", \"priority\": \"medium\", \"intent\": \"subscription_cancel\", \"requires_refund\": true}",
+      "prediction": "{\"department\": \"billing\", \"priority\": \"medium\", \"intent\": \"subscription_cancel\", \"requires_refund\": true}",
+      "latency_sec": 3.326,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 11,
+      "user_input": "When will order #49452 leave the Hyderabad sorting facility?",
+      "reference": "{\"department\": \"shipping\", \"priority\": \"medium\", \"intent\": \"package_status\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"shipping\", \"priority\": \"medium\", \"intent\": \"package_status\", \"requires_refund\": false}",
+      "latency_sec": 3.633,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 12,
+      "user_input": "It has been 8 days since I returned order #68947, where is my $99 refund?",
+      "reference": "{\"department\": \"billing\", \"priority\": \"medium\", \"intent\": \"refund_status\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"billing\", \"priority\": \"medium\", \"intent\": \"refund_status\", \"requires_refund\": false}",
+      "latency_sec": 4.165,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 13,
+      "user_input": "My return for #61266 was received 8 days ago, when does $19 hit my RuPay?",
+      "reference": "{\"department\": \"billing\", \"priority\": \"medium\", \"intent\": \"refund_status\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"billing\", \"priority\": \"medium\", \"intent\": \"refund_status\", \"requires_refund\": false}",
+      "latency_sec": 3.486,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 14,
+      "user_input": "I think my account #81810 was compromised by an IP in Kolkata, lock it now.",
+      "reference": "{\"department\": \"security\", \"priority\": \"high\", \"intent\": \"unauthorized_login\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"security\", \"priority\": \"high\", \"intent\": \"unauthorized_login\", \"requires_refund\": false}",
+      "latency_sec": 3.588,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 15,
+      "user_input": "Accidentally pushed my production API key for project #13278 to GitHub.",
+      "reference": "{\"department\": \"security\", \"priority\": \"high\", \"intent\": \"api_key_leak\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"security\", \"priority\": \"high\", \"intent\": \"api_key_leak\", \"requires_refund\": false}",
+      "latency_sec": 4.144,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 16,
+      "user_input": "I was billed twice for invoice #28844 on my Visa card.",
+      "reference": "{\"department\": \"billing\", \"priority\": \"high\", \"intent\": \"double_charge\", \"requires_refund\": true}",
+      "prediction": "{\"department\": \"billing\", \"priority\": \"high\", \"intent\": \"double_charge\", \"requires_refund\": true}",
+      "latency_sec": 3.79,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 17,
+      "user_input": "My return for #29316 was received 7 days ago, when does $29 hit my RuPay?",
+      "reference": "{\"department\": \"billing\", \"priority\": \"medium\", \"intent\": \"refund_status\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"billing\", \"priority\": \"medium\", \"intent\": \"refund_status\", \"requires_refund\": false}",
+      "latency_sec": 3.457,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 18,
+      "user_input": "Need to redirect package #65112 to my new address in Pune.",
+      "reference": "{\"department\": \"shipping\", \"priority\": \"low\", \"intent\": \"address_change\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"shipping\", \"priority\": \"low\", \"intent\": \"address_change\", \"requires_refund\": false}",
+      "latency_sec": 3.345,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 19,
+      "user_input": "Got an alert of a suspicious login to account #33255 from Jaipur.",
+      "reference": "{\"department\": \"security\", \"priority\": \"high\", \"intent\": \"unauthorized_login\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"security\", \"priority\": \"high\", \"intent\": \"unauthorized_login\", \"requires_refund\": false}",
+      "latency_sec": 4.255,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 20,
+      "user_input": "Someone in Bengaluru accessed my profile #19116 without my permission.",
+      "reference": "{\"department\": \"security\", \"priority\": \"high\", \"intent\": \"unauthorized_login\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"security\", \"priority\": \"high\", \"intent\": \"unauthorized_login\", \"requires_refund\": false}",
+      "latency_sec": 3.771,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 21,
+      "user_input": "Tracking for #85220 shows left at side gate, yet I never received the parcel.",
+      "reference": "{\"department\": \"shipping\", \"priority\": \"high\", \"intent\": \"missing_delivered_package\", \"requires_refund\": true}",
+      "prediction": "{\"department\": \"shipping\", \"priority\": \"high\", \"intent\": \"missing_delivered_package\", \"requires_refund\": true}",
+      "latency_sec": 3.701,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 22,
+      "user_input": "Download link for invoice #91327 ($79) is broken, please resend.",
+      "reference": "{\"department\": \"billing\", \"priority\": \"low\", \"intent\": \"invoice_request\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"billing\", \"priority\": \"low\", \"intent\": \"invoice_request\", \"requires_refund\": false}",
+      "latency_sec": 3.339,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 23,
+      "user_input": "When will order #63424 leave the Kolkata sorting facility?",
+      "reference": "{\"department\": \"shipping\", \"priority\": \"medium\", \"intent\": \"package_status\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"shipping\", \"priority\": \"medium\", \"intent\": \"package_status\", \"requires_refund\": false}",
+      "latency_sec": 4.269,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 24,
+      "user_input": "Please update the shipping address on order #55890 to my reception desk before dispatch.",
+      "reference": "{\"department\": \"shipping\", \"priority\": \"low\", \"intent\": \"address_change\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"shipping\", \"priority\": \"low\", \"intent\": \"address_change\", \"requires_refund\": false}",
+      "latency_sec": 3.362,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 25,
+      "user_input": "Two-factor verification keeps failing for account #38624 even after time sync.",
+      "reference": "{\"department\": \"security\", \"priority\": \"high\", \"intent\": \"2fa_lockout\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"security\", \"priority\": \"high\", \"intent\": \"2fa_lockout\", \"requires_refund\": false}",
+      "latency_sec": 3.591,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 26,
+      "user_input": "Got an alert of a suspicious login to account #16378 from Bengaluru.",
+      "reference": "{\"department\": \"security\", \"priority\": \"high\", \"intent\": \"unauthorized_login\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"security\", \"priority\": \"high\", \"intent\": \"unauthorized_login\", \"requires_refund\": false}",
+      "latency_sec": 3.757,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 27,
+      "user_input": "Please permanently delete my Team account #12187 and erase all personal data.",
+      "reference": "{\"department\": \"account_support\", \"priority\": \"medium\", \"intent\": \"deactivate_account\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"account_support\", \"priority\": \"medium\", \"intent\": \"deactivate_account\", \"requires_refund\": false}",
+      "latency_sec": 4.329,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 28,
+      "user_input": "My Mastercard statement shows two identical charges of $79 for order #70689.",
+      "reference": "{\"department\": \"billing\", \"priority\": \"high\", \"intent\": \"double_charge\", \"requires_refund\": true}",
+      "prediction": "{\"department\": \"billing\", \"priority\": \"high\", \"intent\": \"double_charge\", \"requires_refund\": true}",
+      "latency_sec": 3.444,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 29,
+      "user_input": "Order #44237 says delivered to my apartment lobby, but nothing is there.",
+      "reference": "{\"department\": \"shipping\", \"priority\": \"high\", \"intent\": \"missing_delivered_package\", \"requires_refund\": true}",
+      "prediction": "{\"department\": \"shipping\", \"priority\": \"high\", \"intent\": \"missing_delivered_package\", \"requires_refund\": true}",
+      "latency_sec": 3.671,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 30,
+      "user_input": "Lost access to my 2FA device for user #61605 and backup codes fail.",
+      "reference": "{\"department\": \"security\", \"priority\": \"high\", \"intent\": \"2fa_lockout\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"security\", \"priority\": \"high\", \"intent\": \"2fa_lockout\", \"requires_refund\": false}",
+      "latency_sec": 4.377,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 31,
+      "user_input": "Unrecognized device logged into my Pro account from Hyderabad 9 hours ago.",
+      "reference": "{\"department\": \"security\", \"priority\": \"high\", \"intent\": \"unauthorized_login\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"security\", \"priority\": \"high\", \"intent\": \"unauthorized_login\", \"requires_refund\": false}",
+      "latency_sec": 3.763,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 32,
+      "user_input": "The reset link for my Pro login expired immediately when clicked.",
+      "reference": "{\"department\": \"account_support\", \"priority\": \"medium\", \"intent\": \"password_reset\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"account_support\", \"priority\": \"medium\", \"intent\": \"password_reset\", \"requires_refund\": false}",
+      "latency_sec": 3.346,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 33,
+      "user_input": "Unable to reset forgotten password for user #78875, page throws an error.",
+      "reference": "{\"department\": \"account_support\", \"priority\": \"medium\", \"intent\": \"password_reset\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"account_support\", \"priority\": \"medium\", \"intent\": \"password_reset\", \"requires_refund\": false}",
+      "latency_sec": 3.551,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 34,
+      "user_input": "Tracking on #69087 shows delayed in Chennai for 8 days with no new scan.",
+      "reference": "{\"department\": \"shipping\", \"priority\": \"medium\", \"intent\": \"package_status\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"shipping\", \"priority\": \"medium\", \"intent\": \"package_status\", \"requires_refund\": false}",
+      "latency_sec": 4.494,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 35,
+      "user_input": "Suspect unauthorized API usage on key #64270 from Hyderabad, revoke immediately.",
+      "reference": "{\"department\": \"security\", \"priority\": \"high\", \"intent\": \"api_key_leak\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"security\", \"priority\": \"high\", \"intent\": \"api_key_leak\", \"requires_refund\": false}",
+      "latency_sec": 3.661,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 36,
+      "user_input": "Lost access to my 2FA device for user #52425 and backup codes fail.",
+      "reference": "{\"department\": \"security\", \"priority\": \"high\", \"intent\": \"2fa_lockout\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"security\", \"priority\": \"high\", \"intent\": \"2fa_lockout\", \"requires_refund\": false}",
+      "latency_sec": 3.601,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 37,
+      "user_input": "Locked out of my Enterprise account because 2FA SMS never arrives on my phone.",
+      "reference": "{\"department\": \"security\", \"priority\": \"high\", \"intent\": \"2fa_lockout\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"security\", \"priority\": \"high\", \"intent\": \"2fa_lockout\", \"requires_refund\": false}",
+      "latency_sec": 3.782,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 38,
+      "user_input": "Not receiving recovery instructions to change password on account #20345.",
+      "reference": "{\"department\": \"account_support\", \"priority\": \"medium\", \"intent\": \"password_reset\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"account_support\", \"priority\": \"medium\", \"intent\": \"password_reset\", \"requires_refund\": false}",
+      "latency_sec": 4.17,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 39,
+      "user_input": "How do I stop my Enterprise membership (#68006) and get $149 back?",
+      "reference": "{\"department\": \"billing\", \"priority\": \"medium\", \"intent\": \"subscription_cancel\", \"requires_refund\": true}",
+      "prediction": "{\"department\": \"billing\", \"priority\": \"medium\", \"intent\": \"subscription_cancel\", \"requires_refund\": true}",
+      "latency_sec": 3.495,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 40,
+      "user_input": "Suspect unauthorized API usage on key #71675 from Mumbai, revoke immediately.",
+      "reference": "{\"department\": \"security\", \"priority\": \"high\", \"intent\": \"api_key_leak\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"security\", \"priority\": \"high\", \"intent\": \"api_key_leak\", \"requires_refund\": false}",
+      "latency_sec": 3.566,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 41,
+      "user_input": "Tracking on #55249 shows delayed in Delhi for 10 days with no new scan.",
+      "reference": "{\"department\": \"shipping\", \"priority\": \"medium\", \"intent\": \"package_status\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"shipping\", \"priority\": \"medium\", \"intent\": \"package_status\", \"requires_refund\": false}",
+      "latency_sec": 3.802,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 42,
+      "user_input": "Someone in Delhi accessed my profile #58193 without my permission.",
+      "reference": "{\"department\": \"security\", \"priority\": \"high\", \"intent\": \"unauthorized_login\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"security\", \"priority\": \"high\", \"intent\": \"unauthorized_login\", \"requires_refund\": false}",
+      "latency_sec": 3.893,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 43,
+      "user_input": "Unable to reset forgotten password for user #34114, page throws an error.",
+      "reference": "{\"department\": \"account_support\", \"priority\": \"medium\", \"intent\": \"password_reset\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"account_support\", \"priority\": \"medium\", \"intent\": \"password_reset\", \"requires_refund\": false}",
+      "latency_sec": 3.412,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 44,
+      "user_input": "Carrier claims order #58655 was dropped at the reception desk, please help locate or refund.",
+      "reference": "{\"department\": \"shipping\", \"priority\": \"high\", \"intent\": \"missing_delivered_package\", \"requires_refund\": true}",
+      "prediction": "{\"department\": \"shipping\", \"priority\": \"high\", \"intent\": \"missing_delivered_package\", \"requires_refund\": true}",
+      "latency_sec": 3.633,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 45,
+      "user_input": "Can you email the official VAT invoice for transaction #98037?",
+      "reference": "{\"department\": \"billing\", \"priority\": \"low\", \"intent\": \"invoice_request\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"billing\", \"priority\": \"low\", \"intent\": \"invoice_request\", \"requires_refund\": false}",
+      "latency_sec": 4.041,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 46,
+      "user_input": "Carrier claims order #78679 was dropped at the front porch, please help locate or refund.",
+      "reference": "{\"department\": \"shipping\", \"priority\": \"high\", \"intent\": \"missing_delivered_package\", \"requires_refund\": true}",
+      "prediction": "{\"department\": \"shipping\", \"priority\": \"high\", \"intent\": \"missing_delivered_package\", \"requires_refund\": true}",
+      "latency_sec": 3.941,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 47,
+      "user_input": "Not receiving recovery instructions to change password on account #15726.",
+      "reference": "{\"department\": \"account_support\", \"priority\": \"medium\", \"intent\": \"password_reset\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"account_support\", \"priority\": \"medium\", \"intent\": \"password_reset\", \"requires_refund\": false}",
+      "latency_sec": 3.491,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 48,
+      "user_input": "How do I stop my Enterprise membership (#58200) and get $149 back?",
+      "reference": "{\"department\": \"billing\", \"priority\": \"medium\", \"intent\": \"subscription_cancel\", \"requires_refund\": true}",
+      "prediction": "{\"department\": \"billing\", \"priority\": \"medium\", \"intent\": \"subscription_cancel\", \"requires_refund\": true}",
+      "latency_sec": 3.391,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 49,
+      "user_input": "Can you email the official VAT invoice for transaction #52550?",
+      "reference": "{\"department\": \"billing\", \"priority\": \"low\", \"intent\": \"invoice_request\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"billing\", \"priority\": \"low\", \"intent\": \"invoice_request\", \"requires_refund\": false}",
+      "latency_sec": 4.234,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 50,
+      "user_input": "Can you email the official VAT invoice for transaction #57187?",
+      "reference": "{\"department\": \"billing\", \"priority\": \"low\", \"intent\": \"invoice_request\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"billing\", \"priority\": \"low\", \"intent\": \"invoice_request\", \"requires_refund\": false}",
+      "latency_sec": 3.288,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 51,
+      "user_input": "Our webhook signing key for #17331 was leaked publicly, please revoke it.",
+      "reference": "{\"department\": \"security\", \"priority\": \"high\", \"intent\": \"api_key_leak\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"security\", \"priority\": \"high\", \"intent\": \"api_key_leak\", \"requires_refund\": false}",
+      "latency_sec": 3.62,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 52,
+      "user_input": "Submit a permanent account closure request for user #45369.",
+      "reference": "{\"department\": \"account_support\", \"priority\": \"medium\", \"intent\": \"deactivate_account\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"account_support\", \"priority\": \"medium\", \"intent\": \"deactivate_account\", \"requires_refund\": false}",
+      "latency_sec": 3.729,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 53,
+      "user_input": "Suspect unauthorized API usage on key #86983 from Mumbai, revoke immediately.",
+      "reference": "{\"department\": \"security\", \"priority\": \"high\", \"intent\": \"api_key_leak\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"security\", \"priority\": \"high\", \"intent\": \"api_key_leak\", \"requires_refund\": false}",
+      "latency_sec": 4.222,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 54,
+      "user_input": "I was billed twice for invoice #44465 on my Amex card.",
+      "reference": "{\"department\": \"billing\", \"priority\": \"high\", \"intent\": \"double_charge\", \"requires_refund\": true}",
+      "prediction": "{\"department\": \"billing\", \"priority\": \"high\", \"intent\": \"double_charge\", \"requires_refund\": true}",
+      "latency_sec": 3.303,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 55,
+      "user_input": "Got an alert of a suspicious login to account #10963 from Hyderabad.",
+      "reference": "{\"department\": \"security\", \"priority\": \"high\", \"intent\": \"unauthorized_login\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"security\", \"priority\": \"high\", \"intent\": \"unauthorized_login\", \"requires_refund\": false}",
+      "latency_sec": 3.36,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 56,
+      "user_input": "When will order #91766 leave the Kolkata sorting facility?",
+      "reference": "{\"department\": \"shipping\", \"priority\": \"medium\", \"intent\": \"package_status\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"shipping\", \"priority\": \"medium\", \"intent\": \"package_status\", \"requires_refund\": false}",
+      "latency_sec": 3.551,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 57,
+      "user_input": "Order #36099 says delivered to my apartment lobby, but nothing is there.",
+      "reference": "{\"department\": \"shipping\", \"priority\": \"high\", \"intent\": \"missing_delivered_package\", \"requires_refund\": true}",
+      "prediction": "{\"department\": \"shipping\", \"priority\": \"high\", \"intent\": \"missing_delivered_package\", \"requires_refund\": true}",
+      "latency_sec": 4.058,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 58,
+      "user_input": "Unrecognized device logged into my Pro account from Kolkata 2 hours ago.",
+      "reference": "{\"department\": \"security\", \"priority\": \"high\", \"intent\": \"unauthorized_login\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"security\", \"priority\": \"high\", \"intent\": \"unauthorized_login\", \"requires_refund\": false}",
+      "latency_sec": 3.386,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 59,
+      "user_input": "I think my account #26718 was compromised by an IP in Hyderabad, lock it now.",
+      "reference": "{\"department\": \"security\", \"priority\": \"high\", \"intent\": \"unauthorized_login\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"security\", \"priority\": \"high\", \"intent\": \"unauthorized_login\", \"requires_refund\": false}",
+      "latency_sec": 3.502,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 60,
+      "user_input": "Tracking for #59732 shows left at reception desk, yet I never received the parcel.",
+      "reference": "{\"department\": \"shipping\", \"priority\": \"high\", \"intent\": \"missing_delivered_package\", \"requires_refund\": true}",
+      "prediction": "{\"department\": \"shipping\", \"priority\": \"high\", \"intent\": \"missing_delivered_package\", \"requires_refund\": true}",
+      "latency_sec": 4.283,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 61,
+      "user_input": "Password reset email for account #25531 never arrives in my inbox.",
+      "reference": "{\"department\": \"account_support\", \"priority\": \"medium\", \"intent\": \"password_reset\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"account_support\", \"priority\": \"medium\", \"intent\": \"password_reset\", \"requires_refund\": false}",
+      "latency_sec": 3.723,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 62,
+      "user_input": "Why did you charge my Visa twice for the same $149 renewal?",
+      "reference": "{\"department\": \"billing\", \"priority\": \"high\", \"intent\": \"double_charge\", \"requires_refund\": true}",
+      "prediction": "{\"department\": \"billing\", \"priority\": \"high\", \"intent\": \"double_charge\", \"requires_refund\": true}",
+      "latency_sec": 3.263,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 63,
+      "user_input": "Password reset email for account #47700 never arrives in my inbox.",
+      "reference": "{\"department\": \"account_support\", \"priority\": \"medium\", \"intent\": \"password_reset\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"account_support\", \"priority\": \"medium\", \"intent\": \"password_reset\", \"requires_refund\": false}",
+      "latency_sec": 3.42,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 64,
+      "user_input": "My Mastercard statement shows two identical charges of $49 for order #24563.",
+      "reference": "{\"department\": \"billing\", \"priority\": \"high\", \"intent\": \"double_charge\", \"requires_refund\": true}",
+      "prediction": "{\"department\": \"billing\", \"priority\": \"high\", \"intent\": \"double_charge\", \"requires_refund\": true}",
+      "latency_sec": 4.129,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 65,
+      "user_input": "Tracking for #59089 shows left at side gate, yet I never received the parcel.",
+      "reference": "{\"department\": \"shipping\", \"priority\": \"high\", \"intent\": \"missing_delivered_package\", \"requires_refund\": true}",
+      "prediction": "{\"department\": \"shipping\", \"priority\": \"high\", \"intent\": \"missing_delivered_package\", \"requires_refund\": true}",
+      "latency_sec": 3.601,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 66,
+      "user_input": "Unrecognized device logged into my Enterprise account from Delhi 18 hours ago.",
+      "reference": "{\"department\": \"security\", \"priority\": \"high\", \"intent\": \"unauthorized_login\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"security\", \"priority\": \"high\", \"intent\": \"unauthorized_login\", \"requires_refund\": false}",
+      "latency_sec": 3.421,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 67,
+      "user_input": "The mechanical keyboard in order #51591 arrived cracked and unusable.",
+      "reference": "{\"department\": \"shipping\", \"priority\": \"high\", \"intent\": \"damaged_item\", \"requires_refund\": true}",
+      "prediction": "{\"department\": \"shipping\", \"priority\": \"high\", \"intent\": \"damaged_item\", \"requires_refund\": true}",
+      "latency_sec": 3.467,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 68,
+      "user_input": "My authenticator app codes are rejected when logging into account #34134.",
+      "reference": "{\"department\": \"security\", \"priority\": \"high\", \"intent\": \"2fa_lockout\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"security\", \"priority\": \"high\", \"intent\": \"2fa_lockout\", \"requires_refund\": false}",
+      "latency_sec": 4.37,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 69,
+      "user_input": "Order #89144 says delivered to my apartment lobby, but nothing is there.",
+      "reference": "{\"department\": \"shipping\", \"priority\": \"high\", \"intent\": \"missing_delivered_package\", \"requires_refund\": true}",
+      "prediction": "{\"department\": \"shipping\", \"priority\": \"high\", \"intent\": \"missing_delivered_package\", \"requires_refund\": true}",
+      "latency_sec": 3.527,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 70,
+      "user_input": "Received order #55564 today and the monitor inside is completely broken.",
+      "reference": "{\"department\": \"shipping\", \"priority\": \"high\", \"intent\": \"damaged_item\", \"requires_refund\": true}",
+      "prediction": "{\"department\": \"shipping\", \"priority\": \"high\", \"intent\": \"damaged_item\", \"requires_refund\": true}",
+      "latency_sec": 3.475,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 71,
+      "user_input": "I was billed twice for invoice #55398 on my Mastercard card.",
+      "reference": "{\"department\": \"billing\", \"priority\": \"high\", \"intent\": \"double_charge\", \"requires_refund\": true}",
+      "prediction": "{\"department\": \"billing\", \"priority\": \"high\", \"intent\": \"double_charge\", \"requires_refund\": true}",
+      "latency_sec": 3.516,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 72,
+      "user_input": "I need an itemized receipt for my $79 Team payment on Amex.",
+      "reference": "{\"department\": \"billing\", \"priority\": \"low\", \"intent\": \"invoice_request\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"billing\", \"priority\": \"low\", \"intent\": \"invoice_request\", \"requires_refund\": false}",
+      "latency_sec": 3.921,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 73,
+      "user_input": "Order #55032 says delivered to my front porch, but nothing is there.",
+      "reference": "{\"department\": \"shipping\", \"priority\": \"high\", \"intent\": \"missing_delivered_package\", \"requires_refund\": true}",
+      "prediction": "{\"department\": \"shipping\", \"priority\": \"high\", \"intent\": \"missing_delivered_package\", \"requires_refund\": true}",
+      "latency_sec": 3.433,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 74,
+      "user_input": "Can you email the official VAT invoice for transaction #51779?",
+      "reference": "{\"department\": \"billing\", \"priority\": \"low\", \"intent\": \"invoice_request\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"billing\", \"priority\": \"low\", \"intent\": \"invoice_request\", \"requires_refund\": false}",
+      "latency_sec": 3.323,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 75,
+      "user_input": "Send a PDF tax invoice for order #86148 totaling $49.",
+      "reference": "{\"department\": \"billing\", \"priority\": \"low\", \"intent\": \"invoice_request\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"billing\", \"priority\": \"low\", \"intent\": \"invoice_request\", \"requires_refund\": false}",
+      "latency_sec": 3.754,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 76,
+      "user_input": "My authenticator app codes are rejected when logging into account #96858.",
+      "reference": "{\"department\": \"security\", \"priority\": \"high\", \"intent\": \"2fa_lockout\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"security\", \"priority\": \"high\", \"intent\": \"2fa_lockout\", \"requires_refund\": false}",
+      "latency_sec": 4.015,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 77,
+      "user_input": "Can you check why shipment #59277 hasn't moved from Mumbai since last week?",
+      "reference": "{\"department\": \"shipping\", \"priority\": \"medium\", \"intent\": \"package_status\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"shipping\", \"priority\": \"medium\", \"intent\": \"package_status\", \"requires_refund\": false}",
+      "latency_sec": 3.357,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 78,
+      "user_input": "How do I stop my Starter membership (#23432) and get $29 back?",
+      "reference": "{\"department\": \"billing\", \"priority\": \"medium\", \"intent\": \"subscription_cancel\", \"requires_refund\": true}",
+      "prediction": "{\"department\": \"billing\", \"priority\": \"medium\", \"intent\": \"subscription_cancel\", \"requires_refund\": true}",
+      "latency_sec": 3.338,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 79,
+      "user_input": "Got an alert of a suspicious login to account #20029 from Kolkata.",
+      "reference": "{\"department\": \"security\", \"priority\": \"high\", \"intent\": \"unauthorized_login\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"security\", \"priority\": \"high\", \"intent\": \"unauthorized_login\", \"requires_refund\": false}",
+      "latency_sec": 3.987,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 80,
+      "user_input": "I think my account #21237 was compromised by an IP in Mumbai, lock it now.",
+      "reference": "{\"department\": \"security\", \"priority\": \"high\", \"intent\": \"unauthorized_login\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"security\", \"priority\": \"high\", \"intent\": \"unauthorized_login\", \"requires_refund\": false}",
+      "latency_sec": 3.798,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 81,
+      "user_input": "Password reset email for account #21952 never arrives in my inbox.",
+      "reference": "{\"department\": \"account_support\", \"priority\": \"medium\", \"intent\": \"password_reset\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"account_support\", \"priority\": \"medium\", \"intent\": \"password_reset\", \"requires_refund\": false}",
+      "latency_sec": 3.493,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 82,
+      "user_input": "Suspect unauthorized API usage on key #98063 from Pune, revoke immediately.",
+      "reference": "{\"department\": \"security\", \"priority\": \"high\", \"intent\": \"api_key_leak\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"security\", \"priority\": \"high\", \"intent\": \"api_key_leak\", \"requires_refund\": false}",
+      "latency_sec": 3.507,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 83,
+      "user_input": "Please update the shipping address on order #89609 to my side gate before dispatch.",
+      "reference": "{\"department\": \"shipping\", \"priority\": \"low\", \"intent\": \"address_change\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"shipping\", \"priority\": \"low\", \"intent\": \"address_change\", \"requires_refund\": false}",
+      "latency_sec": 4.228,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 84,
+      "user_input": "The laptop stand in order #50407 arrived cracked and unusable.",
+      "reference": "{\"department\": \"shipping\", \"priority\": \"high\", \"intent\": \"damaged_item\", \"requires_refund\": true}",
+      "prediction": "{\"department\": \"shipping\", \"priority\": \"high\", \"intent\": \"damaged_item\", \"requires_refund\": true}",
+      "latency_sec": 3.479,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 85,
+      "user_input": "Not receiving recovery instructions to change password on account #63511.",
+      "reference": "{\"department\": \"account_support\", \"priority\": \"medium\", \"intent\": \"password_reset\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"account_support\", \"priority\": \"medium\", \"intent\": \"password_reset\", \"requires_refund\": false}",
+      "latency_sec": 3.398,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 86,
+      "user_input": "Order #23019 has been stuck in transit at the Pune hub for 5 days.",
+      "reference": "{\"department\": \"shipping\", \"priority\": \"medium\", \"intent\": \"package_status\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"shipping\", \"priority\": \"medium\", \"intent\": \"package_status\", \"requires_refund\": false}",
+      "latency_sec": 3.488,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 87,
+      "user_input": "I entered the wrong street number for #91810, can we change delivery to Hyderabad?",
+      "reference": "{\"department\": \"shipping\", \"priority\": \"low\", \"intent\": \"address_change\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"shipping\", \"priority\": \"low\", \"intent\": \"address_change\", \"requires_refund\": false}",
+      "latency_sec": 4.133,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 88,
+      "user_input": "It has been 4 days since I returned order #45058, where is my $79 refund?",
+      "reference": "{\"department\": \"billing\", \"priority\": \"medium\", \"intent\": \"refund_status\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"billing\", \"priority\": \"medium\", \"intent\": \"refund_status\", \"requires_refund\": false}",
+      "latency_sec": 3.364,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 89,
+      "user_input": "How do I permanently wipe my account #66139 and associated history?",
+      "reference": "{\"department\": \"account_support\", \"priority\": \"medium\", \"intent\": \"deactivate_account\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"account_support\", \"priority\": \"medium\", \"intent\": \"deactivate_account\", \"requires_refund\": false}",
+      "latency_sec": 3.571,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 90,
+      "user_input": "Suspect unauthorized API usage on key #49688 from Hyderabad, revoke immediately.",
+      "reference": "{\"department\": \"security\", \"priority\": \"high\", \"intent\": \"api_key_leak\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"security\", \"priority\": \"high\", \"intent\": \"api_key_leak\", \"requires_refund\": false}",
+      "latency_sec": 3.809,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 91,
+      "user_input": "Please permanently delete my Enterprise account #49498 and erase all personal data.",
+      "reference": "{\"department\": \"account_support\", \"priority\": \"medium\", \"intent\": \"deactivate_account\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"account_support\", \"priority\": \"medium\", \"intent\": \"deactivate_account\", \"requires_refund\": false}",
+      "latency_sec": 4.255,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 92,
+      "user_input": "My package #91290 was marked delivered 22 hours ago and is missing from my apartment lobby.",
+      "reference": "{\"department\": \"shipping\", \"priority\": \"high\", \"intent\": \"missing_delivered_package\", \"requires_refund\": true}",
+      "prediction": "{\"department\": \"shipping\", \"priority\": \"high\", \"intent\": \"missing_delivered_package\", \"requires_refund\": true}",
+      "latency_sec": 3.69,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 93,
+      "user_input": "Tracking on #99687 shows delayed in Jaipur for 8 days with no new scan.",
+      "reference": "{\"department\": \"shipping\", \"priority\": \"medium\", \"intent\": \"package_status\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"shipping\", \"priority\": \"medium\", \"intent\": \"package_status\", \"requires_refund\": false}",
+      "latency_sec": 3.437,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 94,
+      "user_input": "Can you check why shipment #52294 hasn't moved from Hyderabad since last week?",
+      "reference": "{\"department\": \"shipping\", \"priority\": \"medium\", \"intent\": \"package_status\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"shipping\", \"priority\": \"medium\", \"intent\": \"package_status\", \"requires_refund\": false}",
+      "latency_sec": 3.927,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 95,
+      "user_input": "My Amex statement shows two identical charges of $99 for order #26749.",
+      "reference": "{\"department\": \"billing\", \"priority\": \"high\", \"intent\": \"double_charge\", \"requires_refund\": true}",
+      "prediction": "{\"department\": \"billing\", \"priority\": \"high\", \"intent\": \"double_charge\", \"requires_refund\": true}",
+      "latency_sec": 3.938,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 96,
+      "user_input": "Lost access to my 2FA device for user #92388 and backup codes fail.",
+      "reference": "{\"department\": \"security\", \"priority\": \"high\", \"intent\": \"2fa_lockout\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"security\", \"priority\": \"high\", \"intent\": \"2fa_lockout\", \"requires_refund\": false}",
+      "latency_sec": 3.699,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 97,
+      "user_input": "Suspect unauthorized API usage on key #67536 from Pune, revoke immediately.",
+      "reference": "{\"department\": \"security\", \"priority\": \"high\", \"intent\": \"api_key_leak\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"security\", \"priority\": \"high\", \"intent\": \"api_key_leak\", \"requires_refund\": false}",
+      "latency_sec": 3.617,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 98,
+      "user_input": "Send a PDF tax invoice for order #11407 totaling $79.",
+      "reference": "{\"department\": \"billing\", \"priority\": \"low\", \"intent\": \"invoice_request\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"billing\", \"priority\": \"low\", \"intent\": \"invoice_request\", \"requires_refund\": false}",
+      "latency_sec": 4.264,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 99,
+      "user_input": "Send a PDF tax invoice for order #40539 totaling $199.",
+      "reference": "{\"department\": \"billing\", \"priority\": \"low\", \"intent\": \"invoice_request\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"billing\", \"priority\": \"low\", \"intent\": \"invoice_request\", \"requires_refund\": false}",
+      "latency_sec": 3.384,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 100,
+      "user_input": "Send a PDF tax invoice for order #60488 totaling $19.",
+      "reference": "{\"department\": \"billing\", \"priority\": \"low\", \"intent\": \"invoice_request\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"billing\", \"priority\": \"low\", \"intent\": \"invoice_request\", \"requires_refund\": false}",
+      "latency_sec": 3.316,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 101,
+      "user_input": "Order #73394 has been stuck in transit at the Pune hub for 9 days.",
+      "reference": "{\"department\": \"shipping\", \"priority\": \"medium\", \"intent\": \"package_status\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"shipping\", \"priority\": \"medium\", \"intent\": \"package_status\", \"requires_refund\": false}",
+      "latency_sec": 3.483,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 102,
+      "user_input": "Unable to reset forgotten password for user #32185, page throws an error.",
+      "reference": "{\"department\": \"account_support\", \"priority\": \"medium\", \"intent\": \"password_reset\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"account_support\", \"priority\": \"medium\", \"intent\": \"password_reset\", \"requires_refund\": false}",
+      "latency_sec": 4.317,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 103,
+      "user_input": "I think my account #18178 was compromised by an IP in Kolkata, lock it now.",
+      "reference": "{\"department\": \"security\", \"priority\": \"high\", \"intent\": \"unauthorized_login\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"security\", \"priority\": \"high\", \"intent\": \"unauthorized_login\", \"requires_refund\": false}",
+      "latency_sec": 3.479,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 104,
+      "user_input": "How do I permanently wipe my account #52006 and associated history?",
+      "reference": "{\"department\": \"account_support\", \"priority\": \"medium\", \"intent\": \"deactivate_account\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"account_support\", \"priority\": \"medium\", \"intent\": \"deactivate_account\", \"requires_refund\": false}",
+      "latency_sec": 3.58,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
+        "syntax_valid": 1.0
+      }
+    },
+    {
+      "id": 105,
+      "user_input": "Got an alert of a suspicious login to account #23937 from Bengaluru.",
+      "reference": "{\"department\": \"security\", \"priority\": \"high\", \"intent\": \"unauthorized_login\", \"requires_refund\": false}",
+      "prediction": "{\"department\": \"security\", \"priority\": \"high\", \"intent\": \"unauthorized_login\", \"requires_refund\": false}",
+      "latency_sec": 3.67,
+      "metrics": {
+        "exact_match": 1.0,
+        "token_f1": 1.0,
         "syntax_valid": 1.0
       }
     }
