@@ -88,10 +88,14 @@ Team-Alpha/
 - **VRAM Footprint:** Peak memory usage during training stabilized at **~7.2 GB**, well within the 15 GB NVIDIA T4 threshold.
 
 ---
+<img width="3000" height="1800" alt="loss_curves" src="https://github.com/user-attachments/assets/89d78dac-25a7-4717-b3fe-54a0766d3312" />
+
 
 ## 5. Scientific Evaluation: Before vs. After
 
 Evaluated deterministically ($\text{temperature} = 0.0$, `do_sample=False`) on the 105 held-out records in `data/processed/test.jsonl`:
+<img width="3000" height="1800" alt="before_vs_after_chart" src="https://github.com/user-attachments/assets/48a2e79a-f7f4-4882-a535-644b1a352c45" />
+
 
 ### Quantitative Benchmark Summary
 
@@ -133,6 +137,7 @@ Evaluated deterministically ($\text{temperature} = 0.0$, `do_sample=False`) on t
   ```
 
 ---
+
 
 ## 6. Dual-Mode Interactive Gradio Demo (Member 4)
 
