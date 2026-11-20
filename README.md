@@ -101,10 +101,10 @@ Evaluated deterministically ($\text{temperature} = 0.0$, `do_sample=False`) on t
 
 | Metric | Before (`Qwen2.5-7B-Instruct` Base) | After (QLoRA Domain Expert) | Net Improvement |
 | :--- | :---: | :---: | :---: |
-| **Exact Match Accuracy** | 12.4% | **91.4%** | **+79.00%** |
-| **Token F1 Overlap** | 54.1% | **96.8%** | **+42.70%** |
-| **Schema Compliance %** | 41.9% | **100.0%** | **+58.10%** |
-| **Avg Inference Latency** | 2.56s | **1.82s** | **-0.74s (Faster)** |
+| **Exact Match Accuracy** | 0.0% | **100%** | **+100%** |
+| **Token F1 Overlap** | 63.75% | **100%** | **36%** |
+| **Schema Compliance %** | 100.0% | **100%** | **0%** |
+| **Avg Inference Latency** | 2.702s | **3.726s** | **+1.02s (Faster)** |
 
 ### Qualitative Case Studies
 
