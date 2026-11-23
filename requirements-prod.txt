@@ -1,0 +1,13 @@
+fastapi>=0.115.0
+uvicorn[standard]>=0.30.0
+pydantic>=2.8.0
+sqlalchemy[asyncio]>=2.0.36
+aiosqlite>=0.20.0
+asyncpg>=0.29.0
+transformers>=4.45.0
+peft>=0.13.0
+bitsandbytes>=0.44.0
+accelerate>=0.34.0
+torch>=2.3.0
+vllm>=0.6.0
+
